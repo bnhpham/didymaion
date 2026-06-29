@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python cache
+.pytest_cache/
+.mypy_cache/
+
+# ChromaDB
+data/chroma_db/
+
+# Uploaded documents
+data/documents/
+
+# Streamlit cache
+.streamlit/
+
+# Logs
+*.log
+
+# Build
+dist/
+build/
+
+# Temporary files
+*.tmp

@@ -1,0 +1,23 @@
+fastapi
+uvicorn
+streamlit
+requests
+
+tavily-python
+chromadb
+pypdf
+pydantic
+python-dotenv
+
+langchain
+langgraph
+langchain-community
+langchain-core
+langchain-chroma
+langchain-text-splitters
+
+# Embedding model & local LLM
+langchain-ollama
+
+# Google Gemini API
+langchain-google-genai

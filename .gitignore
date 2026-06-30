@@ -25,10 +25,12 @@ Thumbs.db
 .mypy_cache/
 
 # ChromaDB
-src/data/chroma_db/
+src/data/chroma_db/*
+!src/data/chroma_db/.gitkeep
 
 # Uploaded documents
-src/data/documents/
+src/data/documents/*
+!src/data/documents/README.md
 
 # Streamlit cache
 .streamlit/

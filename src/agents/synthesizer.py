@@ -1,13 +1,13 @@
 from pathlib import Path
-from schemas import MarketState
-from llm import llm
+from src.schemas import MarketState
+from src.llm import llm
 
 
 # Synthesis Agent that combines all specialist analyses into one business report
 
 
 def load_prompt() -> str:
-    path = Path("prompts/synthesis.txt")
+    path = Path("src/prompts/synthesis.txt")
     return path.read_text(encoding="utf-8")
 
 

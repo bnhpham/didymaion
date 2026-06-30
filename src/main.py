@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from schemas import AnalysisResponse, NaturalLanguageRequest
-from orchestrator import run_market_analysis_from_query
+from src.schemas import AnalysisResponse, NaturalLanguageRequest
+from src.orchestrator import run_market_analysis_from_query
 
 
 app = FastAPI(title="Didymaion")

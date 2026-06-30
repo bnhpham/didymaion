@@ -19,12 +19,12 @@ This concept originates from the course "Applied Artificial Intelligence Project
 - **Retrieval-Augmented Generation (RAG)**: Integration of internal documents embedded with Ollama's `nomic-embed-text` model and managed by a ChromaDB vector database.
 - **Configurable LLM Backend**: Use of either a local Ollama model or a cloud LLM. For this project, we use Ollama's `qwen2.5:3b` and `gemini-2.5-flash` provided by the Google Gemini API.
 - **User Interface & API Layer**: REST-API built with FastAPI and interactive frontend using Streamlit.
-- **Example Interaction**: Example business question and the generated report are provided in this project.
+- **Example Interaction**: [Example](assets/example.pdf) of a business question and the generated report are provided in this project.
 
 ## System Architecture
 
 <p float="left">
-  <img src="system_architecture.png" width="1000"/>
+  <img src="assets/system_architecture.png" width="1000"/>
 </p>
 
 # Project Structure
@@ -42,25 +42,25 @@ didymaion/
 │   ├── market_trends.py
 │   └── synthesizer.py
 │
-├── prompts/
+├── prompts/                                # Prompt templates for all agents
 │
 ├── tools/
-│   ├── web_search.py
-│   └── rag.py
+│   ├── web_search.py                       # Tavily web search
+│   └── rag.py                              # Retrieval-Augmented Generation (RAG)
 │
 ├── data/
-│   ├── documents/
-│   └── chroma_db/
+│   ├── documents/                          # Internal documents
+│   └── chroma_db/                          # ChromaDB vector database
 │
 ├── scripts/
-│   └── build_rag_index.py
+│   └── build_rag_index.py                  # Builds ChromaDB vector database
 │
-├── frontend.py
-├── main.py
-├── llm.py
-├── orchestrator.py
-├── schemas.py
-├── config.py
+├── frontend.py                             # Streamlit user interface
+├── main.py                                 # FastAPI backend
+├── llm.py                                  # LLM backend configuration
+├── orchestrator.py                         # Workflow of multi-agent system
+├── schemas.py                              # Defines API requests/responses and LLM outputs
+├── config.py                               # Loads environment variables
 ```
 
 # Setup & Installation
@@ -121,6 +121,44 @@ In another terminal, run frontend:
 
 ```
 streamlit run frontend.py
+```
+
+## Docker
+
+Alternatively, one can run this project inside a Docker container.
+
+First, create a .env.docker file:
+```
+LLM_PROVIDER=ollama
+
+# Alternatively:
+# LLM_PROVIDER=google
+
+TAVILY_API_KEY=YOUR_KEY
+
+GOOGLE_API_KEY=YOUR_KEY
+
+API_URL=http://backend:8000/analyze-query
+
+OLLAMA_BASE_URL=http://host.docker.internal:11434
+```
+
+Before starting the containers, build the ChromaDB vector database:
+
+```
+python scripts/build_rag_index.py
+```
+
+Build and start the frontend and backend:
+
+```
+docker compose up --build
+```
+
+After startup, open the web interface:
+
+```
+http://localhost:8501
 ```
 
 # Future Improvements

@@ -1,5 +1,7 @@
 import requests
 import streamlit as st
+from config import API_URL
+
 
 st.set_page_config(page_title="Didymaion", layout="wide")
 st.title("Didymaion")
@@ -14,7 +16,9 @@ if st.button("Run analysis"):
     with st.spinner("Running analysis..."):
 
         response = requests.post(
-            "http://127.0.0.1:8000/analyze-query",
+            #"http://127.0.0.1:8000/analyze-query",
+            #"http://backend:8000/analyze-query", # if docker is used
+            API_URL,
             json={"query": query},
             timeout=300
             )

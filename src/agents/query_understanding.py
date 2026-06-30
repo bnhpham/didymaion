@@ -1,13 +1,13 @@
 from pathlib import Path
-from schemas import MarketState, QueryUnderstandingOutput
-from llm import llm
+from src.schemas import MarketState, QueryUnderstandingOutput
+from src.llm import llm
 
 
 # Query Understanding Agent processing natural language business questions
 
 
 def load_prompt() -> str:
-    return Path("prompts/query_understanding.txt").read_text(encoding="utf-8")
+    return Path("src/prompts/query_understanding.txt").read_text(encoding="utf-8")
 
 
 def query_understanding_node(state: MarketState):

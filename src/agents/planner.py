@@ -1,13 +1,13 @@
 from pathlib import Path
-from schemas import MarketState, PlannerOutput
-from llm import llm
+from src.schemas import MarketState, PlannerOutput
+from src.llm import llm
 
 
 # Planning Agent dynamically selecting specialist agents
 
 
 def load_prompt() -> str:
-    return Path("prompts/planner.txt").read_text(encoding="utf-8")
+    return Path("src/prompts/planner.txt").read_text(encoding="utf-8")
 
 
 def planner_node(state: MarketState):

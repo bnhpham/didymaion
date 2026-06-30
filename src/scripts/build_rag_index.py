@@ -1,4 +1,4 @@
-from tools.rag import build_vector_store
+from src.tools.rag import build_vector_store
 
 if __name__ == "__main__":
 

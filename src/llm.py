@@ -1,4 +1,4 @@
-from config import LLM_PROVIDER
+from src.config import LLM_PROVIDER, OLLAMA_BASE_URL
 
 # Local LLM provided by Ollama
 if LLM_PROVIDER == "ollama":
@@ -7,6 +7,7 @@ if LLM_PROVIDER == "ollama":
     llm = ChatOllama(
         model="qwen2.5:3b",
         temperature=0.0,
+        base_url=OLLAMA_BASE_URL,
         )
 
 # Cloud LLM provided by the Google Gemini API

@@ -1,15 +1,15 @@
 from pathlib import Path
-from schemas import MarketState
-from tools.web_search import search_web
-from tools.rag import retrieve_internal_context
-from llm import llm
+from src.schemas import MarketState
+from src.tools.web_search import search_web
+from src.tools.rag import retrieve_internal_context
+from src.llm import llm
 
 
 # Market Trends Agent focusing on market dynamics and future outlook
 
 
 def load_prompt() -> str:
-    path = Path("prompts/market_trends.txt")
+    path = Path("src/prompts/market_trends.txt")
     return path.read_text(encoding="utf-8")
 
 

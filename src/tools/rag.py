@@ -1,4 +1,5 @@
 from pathlib import Path
+from src.config import OLLAMA_BASE_URL
 
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -6,11 +7,11 @@ from langchain_ollama import OllamaEmbeddings
 from langchain_chroma import Chroma
 
 
-DOCUMENT_DIR = Path("data/documents")
-CHROMA_DIR = "data/chroma_db"
+DOCUMENT_DIR = Path("src/data/documents")
+CHROMA_DIR = "src/data/chroma_db"
 
 # Embedding model for generating vector embeddings of local documents
-embeddings = OllamaEmbeddings(model="nomic-embed-text")
+embeddings = OllamaEmbeddings(model="nomic-embed-text", base_url=OLLAMA_BASE_URL)
 
 
 # Load local documents

@@ -1,12 +1,12 @@
 from langgraph.graph import StateGraph, END
 
-from schemas import MarketState, PlannerOutput, QueryUnderstandingOutput
-from agents.query_understanding import query_understanding_node
-from agents.planner import planner_node
-from agents.supply_chain import supply_chain_node
-from agents.regulation import regulation_node
-from agents.market_trends import market_trends_node
-from agents.synthesizer import synthesis_node
+from src.schemas import MarketState, PlannerOutput, QueryUnderstandingOutput
+from src.agents.query_understanding import query_understanding_node
+from src.agents.planner import planner_node
+from src.agents.supply_chain import supply_chain_node
+from src.agents.regulation import regulation_node
+from src.agents.market_trends import market_trends_node
+from src.agents.synthesizer import synthesis_node
 
 
 # This file defines the workflow of the multi-agent system

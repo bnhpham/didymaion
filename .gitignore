@@ -10,6 +10,7 @@ env/
 
 # Environment variables
 .env
+.env.docker
 
 # IDE
 .vscode/
@@ -24,10 +25,10 @@ Thumbs.db
 .mypy_cache/
 
 # ChromaDB
-data/chroma_db/
+src/data/chroma_db/
 
 # Uploaded documents
-data/documents/
+src/data/documents/
 
 # Streamlit cache
 .streamlit/
@@ -41,3 +42,6 @@ build/
 
 # Temporary files
 *.tmp
+
+# Docker
+*.pid

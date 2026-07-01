@@ -31,36 +31,44 @@ This concept originates from the course "Applied Artificial Intelligence Project
 
 ```
 didymaion/
-
+│
 ├── src/
+│   ├── agents/
+│   │   ├── query_understanding.py
+│   │   ├── planner.py
+│   │   ├── supply_chain.py
+│   │   ├── regulation.py
+│   │   ├── market_trends.py
+│   │   └── synthesizer.py
+│   │
+│   ├── prompts/                            # Prompt templates for all agents
+│   │
+│   ├── tools/
+│   │   ├── web_search.py                   # Tavily web search
+│   │   └── rag.py                          # Retrieval-Augmented Generation (RAG)
+│   │
+│   ├── data/
+│   │   ├── documents/                      # Internal documents
+│   │   └── chroma_db/                      # ChromaDB vector database
+│   │
+│   ├── scripts/
+│   │   └── build_rag_index.py              # Builds ChromaDB vector database
+│   │
+│   ├── frontend.py                         # Streamlit user interface
+│   ├── main.py                             # FastAPI backend
+│   ├── llm.py                              # LLM backend configuration
+│   ├── orchestrator.py                     # Workflow of multi-agent system
+│   ├── schemas.py                          # Defines API requests/responses and LLM outputs
+│   ├── config.py                           # Loads environment variables
 │
-├── agents/
-│   ├── query_understanding.py
-│   ├── planner.py
-│   ├── supply_chain.py
-│   ├── regulation.py
-│   ├── market_trends.py
-│   └── synthesizer.py
-│
-├── prompts/                                # Prompt templates for all agents
-│
-├── tools/
-│   ├── web_search.py                       # Tavily web search
-│   └── rag.py                              # Retrieval-Augmented Generation (RAG)
-│
-├── data/
-│   ├── documents/                          # Internal documents
-│   └── chroma_db/                          # ChromaDB vector database
-│
-├── scripts/
-│   └── build_rag_index.py                  # Builds ChromaDB vector database
-│
-├── frontend.py                             # Streamlit user interface
-├── main.py                                 # FastAPI backend
-├── llm.py                                  # LLM backend configuration
-├── orchestrator.py                         # Workflow of multi-agent system
-├── schemas.py                              # Defines API requests/responses and LLM outputs
-├── config.py                               # Loads environment variables
+├── Dockerfile
+├── docker-compose.yml
+├── .dockerignore
+├── .gitignore
+├── .env              
+├── .env.docker
+├── requirements.txt
+└── README.md
 ```
 
 ## Setup & Installation

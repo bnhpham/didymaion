@@ -27,7 +27,7 @@ This concept originates from the course "Applied Artificial Intelligence Project
   <img src="assets/system_architecture.png" width="1000"/>
 </p>
 
-# Project Structure
+## Project Structure
 
 ```
 didymaion/
@@ -63,15 +63,15 @@ didymaion/
 ├── config.py                               # Loads environment variables
 ```
 
-# Setup & Installation
+## Setup & Installation
 
-## Install dependencies
+### Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Embedding model
+### Embedding model
 
 For Retrieval-Augmented Generation (RAG), install [Ollama](https://ollama.com/) and run:
 
@@ -81,7 +81,7 @@ ollama pull nomic-embed-text
 
 Alternatively, the embedding backend can easily be replaced with other embedding providers (e.g., Google, OpenAI, or Voyage AI) with minor code changes.
 
-## Configure environment
+### Configure environment
 
 For real-time web search and LLM inference, create a `.env` file and specify:
 
@@ -103,13 +103,13 @@ ollama pull qwen2.5:3b
 
 Other models can also be used, e.g., `qwen2.5:7b`, `gemma3:4b`, `llama3.2:3b`.
 
-## Build the RAG index
+### Build the RAG index
 
 ```
 python scripts/build_rag_index.py
 ```
 
-## Start the multi-agent system
+### Start the multi-agent system
 
 To run the web server:
 
@@ -123,7 +123,7 @@ In another terminal, run frontend:
 streamlit run frontend.py
 ```
 
-## Docker
+### Docker
 
 Alternatively, one can run this project inside a Docker container.
 
@@ -161,10 +161,11 @@ After startup, open the web interface:
 http://localhost:8501
 ```
 
-# Future Improvements
+## Future Improvements
 
 - Additional specialist agents (Competitor Intelligence, Technology/Innovation, ESG etc.)
 - Parallel execution of independent agents
 - Integration of domain-specific APIs, such as financial market, economics, or logistics.
 - Interactive chat interface
 - Long-term memory
+- Defenses against prompt injections and jailbreaks

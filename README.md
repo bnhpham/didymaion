@@ -114,13 +114,13 @@ python scripts/build_rag_index.py
 To run the web server:
 
 ```
-uvicorn main:app --reload
+uvicorn src.main:app --reload
 ```
 
 In another terminal, run frontend:
 
 ```
-streamlit run frontend.py
+streamlit run src/frontend.py
 ```
 
 ### Docker
